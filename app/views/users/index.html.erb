@@ -1,0 +1,16 @@
+<h1>Users</h1>
+</br>
+</br>
+<table>
+	<% @users.each do |user| %>
+	<tr><td>NAME:</td>
+<td><%= user.name%></td> 
+	<!-- <td><%#=link_to 'edit',edit_user_url(id:user.id)%></td>
+	<td><%#=link_to 'show',user_url(id:user.id)%></td>
+	<td><%#=link_to 'destroy',user_url(id:user.id), method: :delete%></td> -->
+	<td><%=link_to 'select hotel', hotels_url%>
+		<td><%=link_to 'pace your order',orders_url%>
+</tr>
+<%end%>
+</table>
+<%=link_to 'new',new_user_url%>

@@ -1,0 +1,31 @@
+<table>
+<tr><td>Hotel NAME:</td>
+<td><%= @hotel.name%></td></tr> 
+</table>
+
+<%=form_for [@hotel, @dish] do |x| %>
+<p>
+	<%=x.label :name%> 
+	<%=x.text_field :name%> <br>
+	<%=x.label :price%> 
+	<%=x.text_field :price%> <br>
+		<%= x.submit "submit"%>
+</p>
+<table>
+	<% @dishes.each do |dish| %>
+		<% if dish.persisted? %>
+			<tr>
+				<td>NAME:</td> 
+				<td><%= dish.name%></td>
+				<td>PRICE:</td> 
+				<td><%= dish.price%></td>
+				<td><%= link_to 'Edit', edit_hotel_dish_url(@hotel.id,dish.id) %></td>
+				<td><%=link_to 'show',hotel_dish_url(@hotel.id,dish.id)%></td>
+				<td><%=link_to 'delete',hotel_dish_url(@hotel.id,dish.id), method: :delete%></td>
+				  
+			</tr>
+		<%end%>
+	<%end%>
+</table>
+<%end%>				
+

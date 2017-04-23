@@ -1,0 +1,7 @@
+<%=form_for @user do |x| %>
+<p>
+	<%=x.label :name%> 
+	<%=x.text_field :name%> <br>
+		<%= x.submit "submit"%>
+</p>
+<%end%>

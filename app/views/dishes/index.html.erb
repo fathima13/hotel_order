@@ -1,0 +1,13 @@
+<h1>Dishes#index</h1>
+<table>
+	<% @dishes.each do |dish| %>
+	<% if dish.persisted? %>
+	<tr><td>NAME:</td> 
+<td><%= dish.name%></td>
+<td>PRICE:</td> 
+<td><%= dish.price%></td>
+<td><%=link_to 'edit',edit_hotel_dish_url(id:dish.id)%></td>
+<td><%=link_to 'delete',hotel_dish_url(id:dish.id), method: :delete%></td>
+<td><%=link_to 'show',hotel_dish_url(id:dish.id)%></td>
+</tr> <%end%><%end%>
+</table>

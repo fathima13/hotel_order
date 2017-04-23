@@ -1,0 +1,14 @@
+<h1>Orders_item#index</h1>
+</br>
+</br>
+<table>
+	<% @orderitems.each do |orderitem| %>
+	<td>Quantity:</td> 
+	<tr><td>quantiy:</td>
+<td><%= orderitem.quantity%></td> 
+	<td><%=link_to 'edit',edit_order_item_url(id:orderitem.id)%></td>
+	<td><%=link_to 'show',order_item_url(id:orderitem.id)%></td>
+	<td><%=link_to 'destroy',order_item_url(id:orderitem.id), method: :delete%></td>
+</tr>
+</table>
+<%end%>

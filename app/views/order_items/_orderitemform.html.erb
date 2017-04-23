@@ -1,0 +1,19 @@
+<%=form_for @orderitem do |f| %>
+<p>
+  <div class="field">
+    <%= f.label :hotel_id %>
+    <%= f.collection_select(:id, @hotels, :id, :name) %>
+  </div>
+<div class="field">
+    <%= f.label :dish_id %>
+    <%= f.collection_select(:id, @dishes, :id, :name) %>
+  </div>
+ <div class="field">
+<%=f.label :quantity%> 
+	<%=f.text_field :quantity%> 
+</div>
+	<div class="actions">
+    <%= f.submit "submit"%>
+  </div>
+</p>
+<%end%>

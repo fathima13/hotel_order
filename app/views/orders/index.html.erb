@@ -1,0 +1,14 @@
+<h1>Orders#index</h1>
+</br>
+</br>
+<table>
+	<% @orders.each do |order| %>
+	<tr><td>Price:</td>
+<td><%= order.price%></td> 
+	<td><%=link_to 'edit',edit_order_url(id:order.id)%></td>
+	<td><%=link_to 'show',order_url(id:order.id)%></td>
+	<td><%=link_to 'destroy',order_url(id:order.id), method: :delete%></td>
+</tr>
+<%end%>
+</table>
+<%=link_to 'new',new_order_url%>

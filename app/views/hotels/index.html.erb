@@ -1,0 +1,17 @@
+<h1>Hotels</h1>
+</br>
+</br>
+<table>
+	<% @hotels.each do |hotel| %>
+	<tr><td>NAME:</td>
+<td><%= hotel.name%></td> 
+	<td><%=link_to 'edit',edit_hotel_url(id:hotel.id)%></td>
+	<td><%=link_to 'show',hotel_url(id:hotel.id)%></td>
+	<td><%=link_to 'destroy',hotel_url(id:hotel.id), method: :delete%></td> 
+<%end%>
+</table>
+<%=link_to 'new',new_hotel_url%>
+<%=link_to 'select the hotel and dishes', new_order_item_url%>
+
+
+	
