@@ -8,8 +8,8 @@
 	<!-- <td><%#=link_to 'edit',edit_user_url(id:user.id)%></td>
 	<td><%#=link_to 'show',user_url(id:user.id)%></td>
 	<td><%#=link_to 'destroy',user_url(id:user.id), method: :delete%></td> -->
-	<td><%=link_to 'select hotel', hotels_url%>
-		<td><%=link_to 'pace your order',orders_url%>
+	<td><%=link_to 'select hotel', hotels_url%></td>
+		<td><%=link_to 'pace your order', orders_url(user_id: user.id,hotel_id: @hotel.id), method: :post%></td>
 </tr>
 <%end%>
 </table>

@@ -1,6 +1,7 @@
 <table>
 			<tr>
-				<td>Price:</td> 
-				<td><%= @user.price%></td>
+      <%=link_to 'orderitem',new_order_order_item_url(order_id: @order.id)%>
+				<!-- <td>Price:</td>  -->
+				<!-- <td><%#= @user.price%></td> -->
 			</tr>
 </table>

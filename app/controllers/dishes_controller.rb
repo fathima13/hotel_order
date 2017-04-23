@@ -1,6 +1,8 @@
 class DishesController < ApplicationController
   def index
-    @dishes=Dish.all
+    # @dishes=Dish.all
+    @hotel=Hotel.find(params[:hotel_id])
+   @dishes=@hotel.dishes
     #@hotel=Hotel.find(params[:hotel_id])
   ## @dish=@hotel.dishes.build
      end

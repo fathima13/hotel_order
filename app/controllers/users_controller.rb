@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
+    @hotel = Hotel.first
   end
 
   def show

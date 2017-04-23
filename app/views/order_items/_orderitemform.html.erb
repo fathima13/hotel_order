@@ -1,9 +1,5 @@
-<%=form_for @orderitem do |f| %>
+<%=form_for [@order,@orderitem] do |f| %>
 <p>
-  <div class="field">
-    <%= f.label :hotel_id %>
-    <%= f.collection_select(:id, @hotels, :id, :name) %>
-  </div>
 <div class="field">
     <%= f.label :dish_id %>
     <%= f.collection_select(:id, @dishes, :id, :name) %>

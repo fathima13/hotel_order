@@ -7,9 +7,11 @@ class OrderItemsController < ApplicationController
   	@orderitem = OrderItem.find(params[:id])
   end
   def new
-    @orderitem = OrderItem.new
-    @hotels=Hotel.all
-    @dishes=@hotels.dishes.all
+    @order=Order.find(params[:order_id])
+
+    @orderitem = @order.order_items.build
+    @dishes=@order.hotel.dishes
+    
       end
 
   def edit
@@ -18,10 +20,9 @@ class OrderItemsController < ApplicationController
 
   def create
     @orderitem = OrderItem.new
-    
     @orderitem.quantity = params[:order_item][:quantity]
     @orderitem.save
-    redirect_to order_items_url
+    redirect_to order_url(id: params[:order_id])
     end
   def update
     @orderitem = OrderItem.find(params[:id])

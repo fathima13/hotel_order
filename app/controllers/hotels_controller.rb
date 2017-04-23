@@ -32,6 +32,5 @@ class HotelsController < ApplicationController
    @hotel=Hotel.find(params[:id])
    @dishes=@hotel.dishes
    @dish=@dishes.build
-   byebug
  end
 end
